@@ -1,0 +1,111 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    position:relative;
+
+}
+
+.containerSlider{
+    height:100%;
+    width:100%;
+   
+}
+
+img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    opacity:0;
+    transition:opacity 2s;
+}
+
+img.active{
+    opacity:1;
+}
+
+.containerSuivantApres{
+   
+    width:100vw;
+}
+
+.prec,
+.suiv{
+    position:absolute;
+    top:50%;
+    z-index:2;
+    
+    font-size:100px;
+    color:white;
+    transform:translateY(-50%);
+    cursor:pointer;
+   
+}
+
+.diaporamaAutomatique{
+    position:absolute;
+    top:70%;
+    left:50%;
+    transform:translateX(-50%);
+    outline:none;
+    padding:10px 20px;
+    background:transparent;
+    cursor:pointer;
+    font-size:20px;
+    font-weight:bold;
+    overflow:hidden ;
+
+}
+
+
+
+.diaporamaAutomatique:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:beige;
+    z-index:-1;
+    transform:translate(-100% ,100%);
+    transition:transform 0.8s;
+}
+
+.diaporamaAutomatique:after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:beige;
+    z-index:-1;
+    transform:translate(100%,-100%);
+    transition:transform 0.8s
+}
+
+.diaporamaAutomatique:hover:before,
+.diaporamaAutomatique:hover:after{
+    transform:translate(0,0) 
+}
+
+
+
+
+
+.prec{
+    left:1rem;
+}
+
+.suiv{
+    right:1rem;
+}
